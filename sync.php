@@ -30,6 +30,7 @@
     $arrPosts = $oGooglePlus->getPosts();
     $i        = 0;
     $wriPosts = 0;
+    $ignPosts = 0;
     foreach ($arrPosts as $strPost) {
       $postid =md5($strPost);
       $history = file_get_contents($historyfile);
@@ -43,16 +44,21 @@
 	     file_put_contents($historyfile, $postid . "\n",FILE_APPEND);
              $wriPosts++;
            } else {
-             print_r($json);
+  	     $logstring =  date("Y-m-d H:i:s") . ": JSON-Error " . $json ."\n";
+	     file_put_contents($logfile,$logstring,FILE_APPEND);
           }
         } catch(OAuthException $E) {
+  	  $logstring =  date("Y-m-d H:i:s") . ": Error " . $E ."\n";
+	  file_put_contents($logfile,$logstring,FILE_APPEND);
          print_r($E);
         }
       } else {
+	$ignPosts++;
 	continue;
       }
     }
     $i++;
   }
-  
+  $logstring =  date("Y-m-d H:i:s") . ": added " . $wriPosts . " posts, ignored " . $ignPosts . "\n";
+  file_put_contents($logfile,$logstring,FILE_APPEND);
 ?>
