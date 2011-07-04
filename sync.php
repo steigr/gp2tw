@@ -2,7 +2,13 @@
 <?php
   require_once 'googleplus.class.php';
   include './config.php';
-
+  $tokenfiles=array('access_token','access_token_request','request_token','request_token_secret');
+  foreach($tokenfiles as $tokenfile) {
+    if (!file_exists($tokenfile) || !is_readable($tokenfile)) {
+      echo "please run 'php oauth.php' first!\n";
+      die();
+    }
+  }
   if (!file_exists($datastore)) {
     if(!mkdir($datastore,0700,true)) { die(); }
   }
@@ -22,8 +28,8 @@
   $oGooglePlus = new GooglePlus($google_plus_id);
   if ($oGooglePlus->isReady) {
     $arrPosts = $oGooglePlus->getPosts();
-    print_r($arrPosts);
     $i        = 0;
+    $wriPosts = 0;
     foreach ($arrPosts as $strPost) {
       $postid =md5($strPost);
       $history = file_get_contents($historyfile);
@@ -35,7 +41,7 @@
           $json = json_decode($oauth->getLastResponse(),true);
           if(isset($json['id'])) {
 	     file_put_contents($historyfile, $postid . "\n",FILE_APPEND);
-             echo "!";
+             $wriPosts++;
            } else {
              print_r($json);
           }
@@ -43,10 +49,10 @@
          print_r($E);
         }
       } else {
-	echo ".";
 	continue;
       }
     }
     $i++;
   }
+  
 ?>

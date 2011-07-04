@@ -5,4 +5,5 @@ $google_plus_id		= 'xxxxxxxxxxxxxxxxxxxxx';
 $shortcut_to_gp		= 'http://sho.rt/+';
 $datastore		= getenv("HOME"). "/.gp2tw";
 $historyfile		= $datastore . "/history";
+$logfile                = $datastore . "/postlog";
 ?>
