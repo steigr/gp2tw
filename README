@@ -1,3 +1,9 @@
+!!USE AT YOUR OWN RISK!!
+
+The code will (unlikely) destroy the interwebs or (likely) spam
+your twitter-account. It may break unexpected. Have fun.
+
+
 Quick Start Guide
 
 1. Install required software
@@ -29,3 +35,8 @@ Quick Start Guide
    -----
    */1 * * * *	/usr/local/gp2tw/sync.php
    -----
+
+TODO
+
+- Add some kind of URL-Shortener
+- Check if it's possible to get a direct link to the Google+-post
