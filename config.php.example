@@ -1,0 +1,8 @@
+<?php
+$consumer_key		= 'xxxxxxxxxxxxxxxxxxxxx' ;
+$consumer_secret	= 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$google_plus_id		= 'xxxxxxxxxxxxxxxxxxxxx';
+$shortcut_to_gp		= 'http://sho.rt/+';
+$datastore		= getenv("HOME"). "/.gp2tw";
+$historyfile		= $datastore . "/history";
+?>

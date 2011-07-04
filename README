@@ -1,0 +1,31 @@
+Quick Start Guide
+
+1. Install required software
+
+   Ubuntu-Example
+   -----
+   sudo aptitude install libcurl4-openssl-dev
+   sudo pecl install -R /usr/lib/php oauth-0.99.9
+   echo "extension=oauth.so" | sudo tee /etc/php5/conf.d/oauth.ini
+   
+   -----
+
+2. Copy config.php.example to config.php and fill in the corresponding values:
+   comsumer_key and secret are Twitter-data and can be retrieved from
+
+    https://dev.twitter.com/apps/new
+
+3. Register your App
+   -----
+   php oauth.php register
+   -----
+
+4. Open the url in the browser, get the PIN (authorize) and validate
+   -----
+   php oauth validate PIN 
+   -----
+
+5. Create cronjob (example below):
+   -----
+   */1 * * * *	/usr/local/gp2tw/sync.php
+   -----
