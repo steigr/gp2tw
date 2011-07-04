@@ -11,7 +11,7 @@ Quick Start Guide
    -----
 
 2. Copy config.php.example to config.php and fill in the corresponding values:
-   comsumer_key and secret are Twitter-data and can be retrieved from
+   consumer_key and consumer_secret are Twitter-data and can be retrieved from
 
     https://dev.twitter.com/apps/new
 

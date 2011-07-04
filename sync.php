@@ -2,7 +2,7 @@
 <?php
   require_once 'googleplus.class.php';
   include './config.php';
-  $tokenfiles=array('access_token','access_token_request','request_token','request_token_secret');
+  $tokenfiles=array('access_token','access_token_secret','request_token','request_token_secret');
   foreach($tokenfiles as $tokenfile) {
     if (!file_exists($tokenfile) || !is_readable($tokenfile)) {
       echo "please run 'php oauth.php' first!\n";
@@ -13,6 +13,11 @@
     if(!mkdir($datastore,0700,true)) { die(); }
   }
   if(!is_writable($datastore)) { die(); }
+  if(!file_exists($logfile)) {
+    touch($logfile);
+    chmod($logfile,0644);
+  }
+  if(!is_writable($logfile)) { die(); }
   if(!file_exists($historyfile)) {
     touch($historyfile);
     chmod($historyfile,0600);
