@@ -3,8 +3,16 @@
 The code will (unlikely) destroy the interwebs or (likely) spam
 your twitter-account. It may break unexpected. Have fun.
 
+Resources
+---------
+
+GooglePlus-Scraper from Fabian Beiner <mail@fabian-beiner.de>: http://fabian-beiner.de
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany
+
+Twitter-Code from http://www.eutony.net/weatherbot.php
 
 Quick Start Guide
+-----------------
 
 1. Install required software
 
@@ -37,6 +45,7 @@ Quick Start Guide
    -----
 
 TODO
+----
 
 - Add some kind of URL-Shortener
 - Check if it's possible to get a direct link to the Google+-post
