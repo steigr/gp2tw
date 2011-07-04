@@ -41,7 +41,7 @@ Quick Start Guide
 
 5. Create cronjob (example below):
    -----
-   */1 * * * *	/usr/local/gp2tw/sync.php
+   */1 * * * *	cd /usr/local/gp2tw && ./sync.php
    -----
 
 TODO
